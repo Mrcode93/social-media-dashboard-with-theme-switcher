@@ -1,0 +1,264 @@
+@use 'globals.scss' as *;
+.container {
+    @include transition;
+    @include flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+    // height: 100%;
+    padding: 30px 100px;
+    & header {
+        height: 100px;
+        width: 100%;
+        @include transition;
+        @include flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: space-between;
+        .title {
+            h1 {
+                font-size: 1.4rem;
+                color: var(--text-h)
+            }
+            p {
+                font-size: 0.875rem;
+                color: var(--text-p);
+                font-weight: 700;
+            }
+        }
+        .toggler {
+            @include flex;
+            @include transition;
+            p {
+                font-size: 0.875rem;
+                color: var(--text-p);
+                font-weight: 700;
+            }
+            .switch {
+                width: 50px;
+                height: 25px;
+                background-image: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+                border-radius: 20px;
+                -webkit-border-radius: 20px;
+                -moz-border-radius: 20px;
+                -ms-border-radius: 20px;
+                -o-border-radius: 20px;
+                margin-left: 10px;
+                position: relative;
+                cursor: pointer;
+                @include transition;
+                & span {
+                    width: 21px;
+                    height: 21px;
+                    background: var(--BG-clr);
+                    position: absolute;
+                    border-radius: 50%;
+                    -webkit-border-radius: 50%;
+                    -moz-border-radius: 50%;
+                    -ms-border-radius: 50%;
+                    -o-border-radius: 50%;
+                    right: 2px;
+                    top: 2px;
+                    &.active {
+                        left: 2px;
+                        top: 2px;
+                    }
+                }
+            }
+        }
+    }
+    section {
+        margin-top: 10px;
+        width: 100%;
+        @include grid;
+        .box {
+            background: var(--card-bg);
+            border-radius: 7px;
+            -webkit-border-radius: 7px;
+            -moz-border-radius: 7px;
+            -ms-border-radius: 7px;
+            -o-border-radius: 7px;
+            height: 250px;
+            @include flex;
+            flex-direction: column;
+            position: relative;
+            padding: 20px;
+            justify-content: space-evenly;
+            overflow: hidden;
+            cursor: pointer;
+            @include transition;
+            &:hover {
+                background-color: var(--card-hover)
+            }
+            .user {
+                @include flex;
+                .logo {
+                    margin-right: 10px
+                }
+                .p {
+                    color: var(--text-p);
+                    font-weight: 700;
+                    font-size: 0.875rem;
+                }
+            }
+            .num {
+                @include flex;
+                flex-direction: column;
+                h1 {
+                    color: var(--text-h);
+                    font-size: 3rem;
+                    line-height: 55px;
+                }
+                p {
+                    color: var(--text-p);
+                    text-transform: uppercase;
+                    font-weight: 400;
+                    font-size: 0.875rem;
+                    letter-spacing: 2.5px
+                }
+            }
+            .status {
+                @include flex;
+                .digit {
+                    margin: 0 5px;
+                    font-weight: 700;
+                    font-size: 0.875rem;
+                    color: hsl(163, 72%, 41%);
+                }
+                p {
+                    color: hsl(163, 72%, 41%);
+                    font-weight: 700;
+                    font-size: 0.875rem;
+                }
+            }
+        }
+        & .facebook span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: hsl(208, 92%, 53%);
+        }
+        & .twitter span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: hsl(203, 89%, 53%);
+        }
+        & .instagram span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+        }
+        & .youtube {
+            span {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 5px;
+                background: hsl(348, 97%, 39%);
+            }
+            .status {
+                .digit {
+                    margin: 0 5px;
+                    color: hsl(356, 69%, 56%);
+                }
+                p {
+                    color: hsl(356, 69%, 56%);
+                }
+            }
+        }
+    }
+    & footer {
+        @include flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 40px;
+        align-items: flex-start;
+        .title {
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            color: var(--text-h);
+            font-weight: 700;
+        }
+        .content {
+            width: 100%;
+            @include grid;
+            @include transition;
+            .card {
+                background: var(--card-bg);
+                height: 150px;
+                border-radius: 7px;
+                -webkit-border-radius: 7px;
+                -moz-border-radius: 7px;
+                -ms-border-radius: 7px;
+                -o-border-radius: 7px;
+                padding: 25px;
+                @include flex;
+                justify-content: space-between;
+                flex-direction: column;
+                .top {
+                    width: 100%;
+                    @include flex;
+                    justify-content: space-between;
+                    p {
+                        color: var(--text-p);
+                        font-size: 0.875rem;
+                        font-weight: 700
+                    }
+                }
+                .down {
+                    width: 100%;
+                    @include flex;
+                    justify-content: space-between;
+                    h1 {
+                        color: var(--text-h);
+                        font-weight: 700
+                    }
+                    p {
+                        color: var(--text-p);
+                        font-size: 0.875rem;
+                        font-weight: 700
+                    }
+                    .stat {
+                        font-size: 0.875rem;
+                        font-weight: 700;
+                        @include flex;
+                    }
+                }
+                overflow: hidden;
+                cursor: pointer;
+                @include transition;
+                &:hover {
+                    background-color: var(--card-hover)
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px 30px;
+        header .title {
+            border-bottom: 1px solid var(--text-p);
+            width: 100%;
+            padding-bottom: 10px;
+        }
+        header {
+            .toggler {
+                width: 100%;
+                @include flex;
+                justify-content: space-between;
+                margin-top: 10px
+            }
+        }
+    }
+}

@@ -1,0 +1,56 @@
+:root[data-theme="theme-dark"] {
+    --BG-clr: hsl(230, 17%, 14%);
+    --top-bg-clr: hsl(232, 19%, 15%);
+    --card-bg: hsl(228, 28%, 20%);
+    --card-hover: hsl(227, 29%, 32%);
+    --text-p: hsl(228, 34%, 66%);
+    --text-h: hsl(0, 0%, 100%);
+    --body-clr: linear-gradient(180deg, hsl(232, 19%, 15%) 30%, hsl(230, 17%, 14%) 0);
+}
+
+:root[data-theme="theme-light"] {
+    --BG-clr: hsl(0, 0%, 100%);
+    --top-bg-clr: hsl(225, 100%, 98%);
+    --card-bg: hsl(227, 47%, 96%);
+    --card-hover: hsl(226, 37%, 88%);
+    --text-p: hsl(228, 12%, 44%);
+    --text-h: hsl(230, 17%, 14%);
+    --body-clr: linear-gradient(180deg, hsl(0, 0%, 100%) 40%, hsl(225, 100%, 98%) 0);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@mixin flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin transition {
+    transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    -ms-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+}
+
+@mixin grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px
+}
+
+body {
+    @include flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    background: var(--body-clr);
+    @include transition;
+    justify-content: flex-start;
+}
